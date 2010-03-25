@@ -70,6 +70,10 @@ describe Money do
     it "allows converting floats to money objects" do
       2.5.to_money.should == Money.new(250)
     end
+    
+    it "allows converting floats edge cases to money objects" do
+      71.99.to_money.should == Money.new(7199)
+    end
 
     it "allows interpreting numbers as amount of cents" do
       (1500.as_cents).should == 15

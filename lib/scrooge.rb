@@ -87,7 +87,7 @@ end
 
 class Numeric
   def to_money
-    Scrooge::Money.new(100 * self)
+    Scrooge::Money.new(100 * BigDecimal(self.to_s) )
   end
 
   def as_cents
